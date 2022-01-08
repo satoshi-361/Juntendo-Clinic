@@ -8556,7 +8556,6 @@ Copyright (c) 2013 Daniel Eden
 
 .news {
   margin-top: 200px;
-  margin-bottom: 100px;
 }
 
 .news-inner {
@@ -8749,7 +8748,6 @@ Copyright (c) 2013 Daniel Eden
 }
 
 .p-bottom {
-  margin-top: 150px;
   margin-bottom: 240px;
   position: relative;
 }
@@ -8791,19 +8789,6 @@ Copyright (c) 2013 Daniel Eden
   margin-top: 5px;
 }
 
-@media screen and (max-width: 767px) {
-  .p-bottom .p-btn {
-    padding-top: 20px;
-    padding-bottom: 17px;
-  }
-  .p-bottom .p-btn p {
-    font-size: 0.8125rem;
-  }
-  .p-bottom .p-btn h2 {
-    font-size: 1.125rem;
-  }
-}
-
 .p-bottom .col2-item {
   margin-bottom: 0;
 }
@@ -8814,6 +8799,12 @@ Copyright (c) 2013 Daniel Eden
 
 .p-bottom .col2-item:nth-child(2) .p-btn {
   background-color: #3C965A;
+}
+
+@media screen and (max-width: 767px) {
+  .p-bottom .col2-item:first-child {
+    margin-bottom: 30px;
+  }
 }
 
 .p-bottom .p-bg-pane {
@@ -8865,6 +8856,34 @@ Copyright (c) 2013 Daniel Eden
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   top: 0;
+}
+
+@media screen and (max-width: 767px) {
+  .p-bottom {
+    margin-bottom: 200px;
+  }
+  .p-bottom .p-btn {
+    padding-top: 20px;
+    padding-bottom: 17px;
+  }
+  .p-bottom .p-btn p {
+    font-size: 0.8125rem;
+  }
+  .p-bottom .p-btn h2 {
+    font-size: 1.125rem;
+  }
+  .p-bottom .p-bg-pane {
+    bottom: -75px;
+  }
+  .p-bottom .p-bg-pane .line-list .line:nth-child(1) {
+    width: 40vw;
+  }
+  .p-bottom .p-bg-pane .line-list .line:nth-child(2) {
+    width: 69.33333vw;
+  }
+  .p-bottom .p-bg-pane .line-list .line:nth-child(3) {
+    width: 96vw;
+  }
 }
 
 @-moz-document url-prefix() {}/* -------------------

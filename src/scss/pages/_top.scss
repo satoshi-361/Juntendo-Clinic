@@ -237,7 +237,6 @@
 
 .news{
   margin-top: 200px;
-  margin-bottom: 100px;
 
   &-inner{
     display: flex;
@@ -384,9 +383,7 @@
 
 
 .p-bottom{
-  margin-top: 150px;
   margin-bottom: 240px;
-
   position: relative;
 
   .p-btn{
@@ -414,14 +411,8 @@
       margin-top: 5px;
     }
     @extend .hover;
-
-    @include mq(sm2){
-      padding-top: 20px;
-      padding-bottom: 17px;
-      p{ font-size: fs(13); }
-      h2{ font-size: fs(18); }
-    }
   }
+
   .col2-item{
     margin-bottom: 0;
     &:nth-child(1) .p-btn{
@@ -429,6 +420,12 @@
     }
     &:nth-child(2) .p-btn{
       background-color: #3C965A;
+    }
+    
+    @include mq(sm2){
+       &:first-child{
+         margin-bottom: 30px;
+       }
     }
   }
 
@@ -473,4 +470,27 @@
       top: 0;
     }
   }
+
+  @include mq(sm2){
+    margin-bottom: 200px;
+
+    .p-btn{
+      padding-top: 20px;
+      padding-bottom: 17px;
+      p{ font-size: fs(13); }
+      h2{ font-size: fs(18); }
+    }
+
+    .p-bg-pane{
+      bottom: -75px;
+      .line-list{
+        .line{
+          &:nth-child(1){width: vw2(150);}
+          &:nth-child(2){width: vw2(260);}
+          &:nth-child(3){width: vw2(360);}
+        }
+      }
+    }
+  }
+
 }
