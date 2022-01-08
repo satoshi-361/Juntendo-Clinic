@@ -1,0 +1,44 @@
+@charset "UTF-8";
+/* -------------------
+  TABS
+--------------------*/
+
+.tabs {
+  &-navWrapper {
+    @include mq() {
+      white-space: nowrap;
+      overflow-x: auto;
+    }
+  }
+
+  &-nav {
+    display: flex;
+    width: 100%;
+  }
+
+  &-item {
+    width: 25%;
+    background-color: #F2F5F7;
+    padding: 20px 15px;
+    border-top: solid 2px #F7F6ED;
+    color: #7B7B6C;
+    background: none;
+    cursor: pointer;
+    text-align: center;
+    transition: all .3s;
+
+    &:hover {
+      border-top-color: #e4e4e4;
+      background-color: #e4e4e4;
+    }
+
+    &.active {
+      border-top-color: #000;
+      background-color: #d0d0d0;
+    }
+  }
+
+  &-cnt {
+    background-color: #fff;
+  }
+}

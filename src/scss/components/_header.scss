@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+/* -------------------
+  HEADER
+--------------------*/
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  padding: 0 0 0 vw(30);
+  z-index: 9999;
+  transition: all .25s;
+  border-bottom: 1px solid rgba(181, 181, 181, 0.2);
+  &.active {
+    position: fixed;
+    height: 70px;
+    background: rgba(255,255,255,.95);
+    .header-logo{
+      width: 250px;
+    }
+  }
+  @include mq() {
+    position: fixed;
+    height: 70px;
+    padding: 0 15px;
+    border-bottom: solid 1px transparent;
+    &.active {
+      background-color: #fff;
+      border-bottom: solid 1px #EFEFEF;
+      .header-logo{
+        width: 200px;
+      }
+    }
+    &.active2 {
+      background-color: #fff;
+    }
+  }
+  &-logo {
+    width: 300px;
+    z-index: 9999;
+    .h-logo-sp {
+      display: none;
+      &.active {
+        display: block;
+      }
+    }
+    .h-logo-pc {
+      &.active {
+        display: none;
+      }
+    }
+    a {
+      display: block;
+    }
+    img{width: 100%;}
+    @include mq() {
+      width: 200px;
+    }
+  }
+}
+
+
+
+/* -------------------
+  menu
+--------------------*/
+.menu {
+  height: 100%;
+  text-align: right;
+  font-size: vw(15);
+  font-weight: bold;
+  @include mq() {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-top: 100px;
+    font-size: fs(12);
+    line-height: fs(20);
+    font-weight: bold;
+    background: transparent linear-gradient(213deg, #a380be 0%, #4F157F 100%) 0% 0%;
+    z-index: 9998;
+    transform: translateX(100%);
+    transition: all .3s;
+    &.active {
+      transform: translateX(0);
+    }
+  }
+
+  &-inner {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    overflow: auto;
+    @include mq() {
+      display: block;
+    }
+  }
+
+  &-list {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    padding: 0 vw(20) 0 vw(30);
+    @include mq() {
+      display: block;
+      padding: 0 0 50px;
+      height: auto;
+    }
+  }
+
+  &-item {
+    margin-right: vw(40);
+    text-align: left;
+    @include mq() {
+      margin-right: 0 !important;
+      &.trans-en{
+        margin-right: 0;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &.trans-en{
+      font-size: fs(12);
+      font-family: Roboto Condensed;
+      font-weight: normal;
+      color: #908E95;
+      margin-right: 30px;
+    }
+
+    &.se-img{
+      min-width: 20px;
+    }
+
+    &.contact {
+      height: 100%;
+      padding-left: vw(25);
+      padding-right: vw(25);
+      background-color: #4F157F;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      a {
+        color: white;
+        display: block;
+      }
+    }
+
+    a {
+      display: block;
+      transition: all .3s;
+      word-break: keep-all;
+      font-size: fs(14);
+      @include mq() {
+        padding: 15px 40px;
+        color: #fff;
+        span {
+          font-size: 18px;
+          &.en {
+            margin-bottom: 6px;
+            font-size: fs(30);
+            font-weight: bold;
+          }
+        }
+      }
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+// Button Open Menu SP
+.sp-navBtn {
+  position: fixed;
+  top: 12px;
+  right: 15px;
+  width: 45px;
+  height: 45px;
+  z-index: 9999;
+  border-radius: 50%;
+  &.active {
+    background-color: #fff;
+    span {
+      background-color: #4F157F;
+      &:nth-of-type(1) { transform: translate3d(-12px, 7px, 0) rotate(45deg); }
+      &:nth-of-type(2) { opacity: 0; }
+      &:nth-of-type(3) { transform: translate3d(-12px, -7px, 0) rotate(-45deg); }
+    }
+  }
+  span {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #000;
+    transition: all .3s;
+
+    &:first-child {
+      top: calc(50% - 8px);
+    }
+
+    &:nth-child(2) {
+      top: calc(50% - 1px);
+    }
+
+    &:nth-child(3) {
+      top: calc(50% + 6px);
+    }
+  }
+}

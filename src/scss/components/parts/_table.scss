@@ -1,0 +1,149 @@
+@charset "UTF-8";
+// ===========================
+// TABLE
+// ===========================
+.table {
+  font-size: fs(15);
+  letter-spacing: 0.38px;
+  line-height: 1.8;
+  &-row {
+    display: flex;
+    border-top: solid 1px #E1EBF3;
+    &:last-child {
+      border-bottom: solid 1px #E1EBF3;
+    }
+    @include mq(sm2) {
+      display: block;
+    }
+  }
+  &-th,
+  &-td {
+    display: flex;
+    padding: 20px 10px;
+  }
+  &-th {
+    font-weight: bold;
+    position: relative;
+    width: 22%;
+    @include mq(sm2) {
+      width: 100%;
+      padding: 15px;
+    }
+    &.type2 {
+      width: 80px;
+      font-size: fs(26);
+      font-family: $font-a;
+      font-weight: 300;
+      color: #81B2F7;
+    }
+  }
+  &-td {
+    @include mq(sm2) {
+      width: 100%;
+      padding: 15px;
+    }
+    &.type2 {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      ._info {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-bottom: 25px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+        .numWrap {
+          display: flex;
+          align-items: flex-end;
+          margin-right: 20px;
+          font-family: $font-a;
+          color: #5094F4;
+          .num {
+            font-size: fs(22);
+            letter-spacing: .55px;
+            font-weight: 300;
+          }
+          .unit {
+            font-size: fs(13);
+            letter-spacing: .33px;
+            font-weight: 300;
+            padding-bottom: 6px;
+          }
+        }
+        ._cnt {
+          color: #5A595A;
+          font-size: fs(14);
+          letter-spacing: .7px;
+          letter-spacing: 1.8;
+        }
+      }
+    }
+  }
+}
+
+
+.subTable {
+  &-item {
+    display: flex;
+    .ttl {
+      &.type1 {
+        width: 130px;
+      }
+    }
+  }
+}
+
+.subTable2 {
+  display: flex;
+  @include mq(sm2) {
+    flex-wrap: wrap;
+  }
+  &-item {
+    width: 240px;
+    @include mq(sm2) {
+      width: 100%;
+    }
+  }
+}
+
+
+// ===========================
+// TABLE2
+// ===========================
+.table2 {
+  @include mq(sm2) {
+    overflow-x: auto;
+  }
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+  }
+
+  th {
+    background-color: #F2F5F7;
+    border: 1px solid #E6EEF2;
+    box-sizing: border-box;
+    font-weight: 700;
+    padding: 20px 15px;
+    width: 185px;
+  }
+
+  td {
+    border: 1px solid #E6EEF2;
+    box-sizing: border-box;
+    padding: 20px 15px;
+  }
+
+  &.type2 {
+    table {
+      @include mq(sm2) {
+        width: 220vw;
+      }
+    }
+  }
+  
+}
