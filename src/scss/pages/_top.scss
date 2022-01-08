@@ -305,6 +305,10 @@
         }
       }
     }
+    @include mq(smt){
+      margin-top: 42px;
+      margin-bottom: 10px;
+    }
   }
 
   &-item {

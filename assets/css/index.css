@@ -8654,6 +8654,13 @@ Copyright (c) 2013 Daniel Eden
   }
 }
 
+@media screen and (max-width: 576px) {
+  .news .category {
+    margin-top: 42px;
+    margin-bottom: 10px;
+  }
+}
+
 .news-item {
   background-color: #fff;
   -webkit-transition: all .25s;
