@@ -7400,10 +7400,6 @@ Copyright (c) 2013 Daniel Eden
   transition: all .3s;
 }
 
-.pagetop:hover {
-  background-color: #F4F4F4;
-}
-
 .pagetop span::before {
   display: block;
   content: '';
@@ -7757,6 +7753,30 @@ Copyright (c) 2013 Daniel Eden
   opacity: 1;
 }
 
+.hover-bg-flow-left-right, .patients-menu__left a, .top .p-top-mv--item .btn-detail, .news .btn-detail {
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, white), color-stop(50%, #ded4e6)) right;
+  background: linear-gradient(to left, white 50%, #ded4e6 50%) right;
+  background-size: 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.hover-bg-flow-left-right:hover, .patients-menu__left a:hover, .top .p-top-mv--item .btn-detail:hover, .news .btn-detail:hover {
+  background-position: left;
+}
+
+.hover-bg-flow-bottom-top, .pagetop {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(50%, white), color-stop(50%, #ded4e6));
+  background: linear-gradient(to bottom, white 50%, #ded4e6 50%);
+  background-size: 100% 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.hover-bg-flow-bottom-top:hover, .pagetop:hover {
+  background-position: 0 100%;
+}
+
 /* -------------------
   HEADER
 --------------------*/
@@ -7780,6 +7800,7 @@ Copyright (c) 2013 Daniel Eden
   -webkit-transition: all .25s;
   transition: all .25s;
   border-bottom: 1px solid rgba(181, 181, 181, 0.2);
+  background: white;
 }
 
 .header.active {
@@ -7863,7 +7884,7 @@ Copyright (c) 2013 Daniel Eden
     font-size: 0.75rem;
     line-height: 1.25rem;
     font-weight: bold;
-    background: transparent linear-gradient(213deg, #a380be 0%, #4F157F 100%) 0% 0%;
+    background: white;
     z-index: 9998;
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
@@ -7901,7 +7922,7 @@ Copyright (c) 2013 Daniel Eden
       -ms-flex-align: center;
           align-items: center;
   height: 100%;
-  padding: 0 1.42857vw 0 2.14286vw;
+  padding: 0 0 0 2.14286vw;
 }
 
 @media screen and (max-width: 1050px) {
@@ -7915,6 +7936,19 @@ Copyright (c) 2013 Daniel Eden
 .menu-item {
   margin-right: 2.85714vw;
   text-align: left;
+  position: relative;
+}
+
+@media screen and (min-width: 1051px) {
+  .menu-item {
+    height: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
 }
 
 @media screen and (max-width: 1050px) {
@@ -7923,6 +7957,11 @@ Copyright (c) 2013 Daniel Eden
   }
   .menu-item.trans-en {
     margin-right: 0;
+    margin-top: 25px;
+  }
+  .menu-item.trans-en a span {
+    font-size: 12px;
+    color: #908E95;
   }
 }
 
@@ -7942,7 +7981,59 @@ Copyright (c) 2013 Daniel Eden
   min-width: 20px;
 }
 
-.menu-item.contact {
+.menu-item.se-img .inline-input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.menu-item.se-img .inline-input input {
+  width: 100%;
+  height: 50px;
+  border: 1px solid #B5B5B5;
+  padding: 0 20px;
+}
+
+.menu-item.se-img .inline-input .btn-submit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60px;
+  height: 50px;
+  background-color: #4F157F;
+}
+
+.menu-item.se-img .inline-input .btn-submit img {
+  width: 15px;
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-item.se-img {
+    margin-top: 10px;
+    margin-bottom: 30px;
+    padding: 0 40px;
+  }
+}
+
+.menu-item__link {
+  -webkit-transition: all .3s;
+  transition: all .3s;
+  word-break: keep-all;
+  font-size: 0.875rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+.menu-item__link.contact {
   height: 100%;
   padding-left: 1.78571vw;
   padding-right: 1.78571vw;
@@ -7956,38 +8047,65 @@ Copyright (c) 2013 Daniel Eden
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-}
-
-.menu-item.contact a {
   color: white;
-  display: block;
 }
 
-.menu-item a {
-  display: block;
+.menu-item__link.contact:hover {
+  opacity: 0.8;
   -webkit-transition: all .3s;
   transition: all .3s;
-  word-break: keep-all;
-  font-size: 0.875rem;
+}
+
+.menu-item__link::after {
+  display: block;
+  content: '';
+  border-bottom: solid 4px #4F157F;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  width: 60px;
+  position: absolute;
+  left: 50%;
+  bottom: -2px;
+  -webkit-transform: translate(-50%, -50%) scaleX(0);
+          transform: translate(-50%, -50%) scaleX(0);
+  -webkit-transition: -webkit-transform 250ms ease-in-out;
+  transition: -webkit-transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out;
+  transition: transform 250ms ease-in-out, -webkit-transform 250ms ease-in-out;
 }
 
 @media screen and (max-width: 1050px) {
-  .menu-item a {
+  .menu-item__link {
     padding: 15px 40px;
-    color: #fff;
+    width: 100%;
+    color: #000;
   }
-  .menu-item a span {
-    font-size: 18px;
+  .menu-item__link.contact {
+    margin: 0 40px;
+    width: auto;
   }
-  .menu-item a span.en {
-    margin-bottom: 6px;
-    font-size: 1.875rem;
-    font-weight: bold;
+  .menu-item__link::after {
+    left: 40px;
+    bottom: 0;
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
   }
 }
 
-.menu-item a:hover {
-  opacity: 0.7;
+.menu-item:hover .menu-item__link::after {
+  -webkit-transform: translate(-50%, -50%) scaleX(1);
+          transform: translate(-50%, -50%) scaleX(1);
+}
+
+@media screen and (max-width: 1050px) {
+  .menu-item:hover .menu-item__link::after {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+}
+
+.menu-item:nth-child(5) a::after, .menu-item:nth-child(6) a::after, .menu-item:nth-child(7) a::after {
+  display: none;
 }
 
 .sp-navBtn {
@@ -8002,10 +8120,6 @@ Copyright (c) 2013 Daniel Eden
 
 .sp-navBtn.active {
   background-color: #fff;
-}
-
-.sp-navBtn.active span {
-  background-color: #4F157F;
 }
 
 .sp-navBtn.active span:nth-of-type(1) {
@@ -8045,6 +8159,108 @@ Copyright (c) 2013 Daniel Eden
 
 .sp-navBtn span:nth-child(3) {
   top: calc(50% + 6px);
+}
+
+.patients-menu {
+  background-color: #F2F2F2;
+  position: fixed;
+  width: 100%;
+  top: 100px;
+  left: 0;
+  z-index: 500;
+  display: none;
+}
+
+.patients-menu__wrap {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.patients-menu__left {
+  padding: 90px 95px;
+  width: 330px;
+  background-color: #4F157F;
+  padding-left: 40px;
+  padding-right: 40px;
+  color: white;
+}
+
+.patients-menu__left h1 {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.patients-menu__left p {
+  margin-top: 20px;
+  font-size: 0.9375rem;
+}
+
+.patients-menu__left a {
+  display: block;
+  margin-top: 25px;
+  padding: 10px;
+  font-size: 0.9375rem;
+  background-color: white;
+  color: #3D3D3D;
+  font-weight: bold;
+  text-align: center;
+}
+
+.patients-menu__right {
+  padding: 50px 80px;
+  width: calc(100% - 330px);
+}
+
+.patients-menu__right li:not(:last-child) {
+  margin-bottom: 20px;
+}
+
+.patients-menu__right a {
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.patients-menu__right a:hover {
+  color: #4F157F;
+}
+
+.patients-menu.active {
+  top: 70px;
+}
+
+@media screen and (max-width: 1050px) {
+  .patients-menu {
+    position: relative;
+    top: 0;
+  }
+  .patients-menu.active {
+    top: 0;
+  }
+  .patients-menu__wrap {
+    display: block;
+  }
+  .patients-menu__left {
+    width: 100%;
+    padding: 27px 40px 30px;
+  }
+  .patients-menu__left h1 {
+    font-size: 0.9375rem;
+  }
+  .patients-menu__left p {
+    font-size: 0.75rem;
+    margin-top: 18px;
+    font-weight: 500;
+  }
+  .patients-menu__left a {
+    font-size: 0.9375rem;
+    margin-top: 25px;
+    max-width: 250px;
+  }
+  .patients-menu__right {
+    padding: 20px 40px;
+    width: 100%;
+  }
 }
 
 /* -------------------
@@ -8375,14 +8591,8 @@ Copyright (c) 2013 Daniel Eden
   position: absolute;
   bottom: -50px;
   left: 50%;
-  -webkit-transition: all .7s;
-  transition: all .7s;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-}
-
-.top .p-top-mv--item .btn-detail:hover {
-  background-color: #F4F4F4;
 }
 
 .top .p-top-mv--item:hover .btn-detail {
@@ -8746,12 +8956,6 @@ Copyright (c) 2013 Daniel Eden
   width: 9px;
   height: 15px;
   background-image: url(../images/common/icon-arrow-right-main.svg);
-}
-
-.news .btn-detail:hover {
-  -webkit-transition: .3s;
-  transition: .3s;
-  opacity: .7;
 }
 
 .p-bottom {

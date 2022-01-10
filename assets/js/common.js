@@ -18,19 +18,30 @@ jQuery(function($) {
   --------------------- */
   // Trigger menu content
   var triggerMenuCnt = function() {
-    $('.js-sp-navBtn').click(function() {
+    $('.js-sp-navBtn').click(()=>{
       $(this).toggleClass('active');
       $('.js-menu, .js-logo-pc, .js-logo-sp').toggleClass('active');
     });
+
+    $('.menu-item.-patients').hover(()=>{
+      $('.patients-menu').slideDown();
+    })
+
+    $('.menu-item.-patients').mouseleave(()=>{
+        $('.patients-menu').hide(); 
+    })
+
   }
 
   // Trigger background for header
   var triggerBackground = function() {
     if ($(this).scrollTop() > 100) {
-      console.log(1);
       $('.js-header').addClass('active');
+      $('.patients-menu').addClass('active');
     } else {
       $('.js-header').removeClass('active');
+      $('.patients-menu').removeClass('active');
+
     }
   }
 

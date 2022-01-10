@@ -20,9 +20,6 @@
 	background-color: white;
 	color: #6B6B6B;
 	transition: all .3s;
-	&:hover{
-		background-color: #F4F4F4;
-	}
 	span{
 		&::before{
 			display: block;
@@ -46,4 +43,6 @@
 			bottom: 15px;
 		}
 	}
+
+	@extend .hover-bg-flow-bottom-top;
 }

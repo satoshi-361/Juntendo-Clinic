@@ -101,11 +101,8 @@
         position: absolute;
         bottom: -50px;
         left: 50%;
-        transition: all .7s;
         transform: translate(-50%, -50%);
-        &:hover{
-          background-color: #F4F4F4;
-        }
+        @extend .hover-bg-flow-left-right;
       }
       &:hover{
         .btn-detail{
@@ -377,10 +374,7 @@
       height: 15px;
       background-image: url(../images/common/icon-arrow-right-main.svg);
     }
-    &:hover{
-      transition: .3s;
-      opacity: .7;
-    }
+    @extend .hover-bg-flow-left-right;
   }
 }
 
