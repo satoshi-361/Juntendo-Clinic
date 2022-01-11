@@ -2938,6 +2938,10 @@ body.fixed {
   margin-right: 100px;
 }
 
+.pt-10 {
+  padding-top: 10px;
+}
+
 .no-reset h2 {
   position: relative;
   font-size: 1.5rem;
@@ -5089,16 +5093,107 @@ body.fixed {
 /* -------------------
     GUIDE
 --------------------*/
+.guide-btn__link {
+  font-size: 15px;
+  position: relative;
+  display: inline-block;
+  padding-right: 20px;
+}
+
+.guide-btn__link::before {
+  display: block;
+  content: '';
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #F2879B;
+  position: absolute;
+  right: 0px;
+  top: 4px;
+}
+
+.guide-btn__link::after {
+  display: block;
+  content: '';
+  border-top: 1px solid #fff;
+  border-left: 1px solid #fff;
+  width: 5px;
+  height: 5px;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  position: absolute;
+  right: 6px;
+  top: 9px;
+}
+
+.guide-btn__link:hover {
+  color: #4F157F;
+}
+
+.arrow-right-link {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #F2879B;
+  display: block;
+  position: relative;
+  margin-left: auto;
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #F2879B), color-stop(50%, #ec748a)) right;
+  background: linear-gradient(to left, #F2879B 50%, #ec748a 50%) right;
+  background-size: 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.arrow-right-link::after {
+  display: block;
+  content: '';
+  border-top: 2px solid #fff;
+  border-left: 2px solid #fff;
+  width: 10px;
+  height: 10px;
+  -webkit-transform: rotate(-225deg);
+          transform: rotate(-225deg);
+  position: absolute;
+  right: 12px;
+  top: 10px;
+}
+
+.arrow-right-link:hover {
+  background-position: left;
+}
+
+.guide-section__heading {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #6B6B6B;
+}
+
+.guide-section__heading span {
+  background-image: url(../images/common/dashline.png);
+  background-repeat-y: no-repeat;
+  background-position: bottom;
+}
+
+/*-----------------------------
+
+         Main Guide
+
+-----------------------------*/
 .guide-top {
   min-height: 820px;
   background-image: url(../images/guide/p-top__mv.png);
   background-size: cover;
   background-position-X: 20%;
+  position: relative;
 }
 
 .guide-top__title-wrap {
   position: absolute;
   max-width: 435px;
+  top: 6.61429vw;
+  left: 10.71429vw;
 }
 
 .guide-top__title-wrap img {
@@ -5109,6 +5204,241 @@ body.fixed {
   margin-top: 40px;
   font-size: 0.9375rem;
   font-weight: 500;
+}
+
+.guide-top__title-wrap .guide-btn__link {
+  margin-top: 18px;
+}
+
+.guide-top__faq-link {
+  position: absolute;
+  right: 2.14286vw;
+  bottom: 160px;
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 1.375rem;
+  font-weight: bold;
+  -webkit-filter: drop-shadow(5px 5px 0px rgba(175, 57, 79, 0.8));
+          filter: drop-shadow(5px 5px 0px rgba(175, 57, 79, 0.8));
+  background: -webkit-gradient(linear, right top, left top, color-stop(50%, #F2879B), color-stop(50%, #ec748a)) right;
+  background: linear-gradient(to left, #F2879B 50%, #ec748a 50%) right;
+  background-size: 200%;
+  -webkit-transition: .3s ease-out;
+  transition: .3s ease-out;
+}
+
+.guide-top__faq-link::after {
+  display: block;
+  content: '';
+  width: 13px;
+  height: 13px;
+  border-top: 2px solid #000;
+  border-left: 2px solid #000;
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+  position: absolute;
+  bottom: 35px;
+}
+
+.guide-top__faq-link:hover {
+  background-position: left;
+}
+
+.guide-research {
+  margin-top: -330px !important;
+  padding-top: 450px;
+  padding-bottom: 100px;
+  background-color: #E9EBF7;
+}
+
+.guide-research__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 75px;
+}
+
+.guide-research__list--item {
+  max-width: 320px;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+          filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+}
+
+.guide-research__list--item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.guide-research__list--item .img-wrap {
+  text-align: center;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+  background-color: #A074C4;
+}
+
+.guide-research__list--item .img-wrap img {
+  margin-top: -30px;
+}
+
+.guide-research__list--item .desc-wrap {
+  padding: 27px 30px 70px;
+  font-size: 0.9375rem;
+}
+
+.guide-research__list--item .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.guide-research__list--item .title span {
+  padding: 0 5px;
+  background-color: #FFEBF1;
+}
+
+.guide-research__list--item .arrow-right-link {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.guide-research .virus__img-wrap {
+  margin-top: 100px;
+  height: 150px;
+  background: url(../images/guide/p-virus__mv.png);
+  background-size: cover;
+  background-position: 50%;
+}
+
+.guide-research .text1 {
+  margin-top: 15px;
+  font-size: 0.75rem;
+}
+
+.guide-news {
+  margin-bottom: 145px;
+}
+
+.guide-news__content {
+  margin: 45px auto 0 auto;
+  max-width: 800px;
+}
+
+.guide-news__content .news-list {
+  margin-bottom: 25px;
+}
+
+.guide-news__content .news-list .news-item .tag {
+  color: #3D3D3D;
+  background-color: #F2879B;
+  border-radius: 20px;
+}
+
+.guide-news .guide-btn__link {
+  float: right;
+}
+
+.guide-center {
+  padding-top: 95px;
+  padding-bottom: 100px;
+  background-color: #E9EBF7;
+}
+
+.guide-center__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-top: 40px;
+}
+
+.guide-center__list--item {
+  max-width: 320px;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  -webkit-filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+          filter: drop-shadow(6px 6px 0px rgba(152, 157, 168, 0.5));
+}
+
+.guide-center__list--item:not(:last-child) {
+  margin-right: 30px;
+}
+
+.guide-center__list--item .img-wrap {
+  text-align: center;
+  margin-top: 30px;
+  height: 60px;
+}
+
+.guide-center__list--item:last-child .img-wrap {
+  padding-top: 14px;
+}
+
+.guide-center__list--item .desc-wrap {
+  margin-top: 18px;
+  margin-bottom: 70px;
+  padding: 0 30px;
+  font-size: 0.9375rem;
+}
+
+.guide-center__list--item .title {
+  font-size: 1.25rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.guide-center__list--item .title span {
+  padding: 0 5px;
+  background-color: #FFEBF1;
+}
+
+.guide-center__list--item .arrow-right-link {
+  margin-top: 10px;
+  position: absolute;
+  bottom: 30px;
+  right: 30px;
+}
+
+.guide-banner {
+  margin-top: 60px;
+  margin-bottom: 100px;
+}
+
+.guide-banner__content {
+  max-width: 956px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.guide-banner__wrap:first-child {
+  margin-right: 20px;
 }
 
 /* -------------------
@@ -5563,7 +5893,7 @@ body.fixed {
 }
 
 .news-item:hover {
-  background-color: #e5e2e2;
+  background-color: #f2f2f2;
 }
 
 .news-item--inner {
