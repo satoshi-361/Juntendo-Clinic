@@ -2133,6 +2133,16 @@ body.fixed {
   }
 }
 
+.pc-onlyt {
+  display: block;
+}
+
+@media screen and (max-width: 576px) {
+  .pc-onlyt {
+    display: none !important;
+  }
+}
+
 .pc-only3 {
   display: inline-block;
 }
@@ -2159,6 +2169,16 @@ body.fixed {
 
 @media screen and (max-width: 767px) {
   .sp-only2 {
+    display: block !important;
+  }
+}
+
+.sp-onlyt {
+  display: none !important;
+}
+
+@media screen and (max-width: 576px) {
+  .sp-onlyt {
     display: block !important;
   }
 }
@@ -5176,6 +5196,18 @@ body.fixed {
   background-position: bottom;
 }
 
+@media screen and (max-width: 576px) {
+  .guide-section__heading {
+    font-size: 2rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .guide-section__heading {
+    font-size: 8.53333vw;
+  }
+}
+
 /*-----------------------------
 
          Main Guide
@@ -5253,6 +5285,45 @@ body.fixed {
 
 .guide-top__faq-link:hover {
   background-position: left;
+}
+
+@media screen and (max-width: 1050px) {
+  .guide-top__title-wrap {
+    left: 3.57143vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .guide-top {
+    background-position-X: 26%;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-top {
+    background-image: url(../images/guide/p-top__mv-sp.png);
+  }
+  .guide-top__title-wrap {
+    left: 15px;
+    right: 15px;
+  }
+  .guide-top__title-wrap p {
+    margin-top: 30px;
+  }
+  .guide-top__faq-link {
+    font-size: 0.75rem;
+    width: 100px;
+    height: 100px;
+    bottom: 120px;
+    -webkit-filter: drop-shadow(3px 3px 0px rgba(175, 57, 79, 0.8));
+            filter: drop-shadow(3px 3px 0px rgba(175, 57, 79, 0.8));
+  }
+  .guide-top__faq-link::after {
+    width: 9px;
+    height: 9px;
+    position: absolute;
+    bottom: 15px;
+  }
 }
 
 .guide-research {
@@ -5333,6 +5404,41 @@ body.fixed {
   font-size: 0.75rem;
 }
 
+@media screen and (max-width: 767px) {
+  .guide-research__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .guide-research__list--item {
+    max-width: 450px;
+  }
+  .guide-research__list--item:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 60px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-research {
+    padding-top: 400px;
+    padding-bottom: 60px;
+  }
+  .guide-research__list {
+    margin-top: 60px;
+  }
+  .guide-research .virus__img-wrap {
+    height: 48vw;
+    margin-top: 60px;
+    background: url(../images/guide/p-virus__mv-sp.png);
+    background-size: 100% 100%;
+  }
+}
+
 .guide-news {
   margin-bottom: 145px;
 }
@@ -5354,6 +5460,16 @@ body.fixed {
 
 .guide-news .guide-btn__link {
   float: right;
+}
+
+@media screen and (max-width: 576px) {
+  .guide-news {
+    margin-top: 60px !important;
+    margin-bottom: 120px;
+  }
+  .guide-news__content {
+    margin-top: 20px;
+  }
 }
 
 .guide-center {
@@ -5421,6 +5537,31 @@ body.fixed {
   right: 30px;
 }
 
+@media screen and (max-width: 767px) {
+  .guide-center__list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .guide-center__list--item {
+    max-width: 450px;
+  }
+  .guide-center__list--item:not(:last-child) {
+    margin-right: 0px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-center {
+    padding: 60px 0;
+  }
+}
+
 .guide-banner {
   margin-top: 60px;
   margin-bottom: 100px;
@@ -5439,6 +5580,25 @@ body.fixed {
 
 .guide-banner__wrap:first-child {
   margin-right: 20px;
+}
+
+@media screen and (max-width: 767px) {
+  .guide-banner__content {
+    display: block;
+  }
+  .guide-banner__wrap {
+    text-align: center;
+  }
+  .guide-banner__wrap:first-child {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .guide-banner {
+    margin: 60px 0;
+  }
 }
 
 /* -------------------

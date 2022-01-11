@@ -33,6 +33,14 @@ body {
   }
 }
 
+.pc-onlyt {
+  display: block;
+
+  @include mq(smt) {
+    display: none !important;
+  }
+}
+
 .pc-only3 {
   display: inline-block;
 
@@ -53,6 +61,14 @@ body {
   display: none !important;
 
   @include mq(sm2) {
+    display: block !important;
+  }
+}
+
+.sp-onlyt {
+  display: none !important;
+
+  @include mq(smt) {
     display: block !important;
   }
 }
