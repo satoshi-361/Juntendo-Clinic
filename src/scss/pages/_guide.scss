@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+/* -------------------
+    GUIDE
+--------------------*/
+
+.guide-btn__link{
+
+}
+
+
+.guide-top{
+    min-height: 820px;
+    background-image: url(../images/guide/p-top__mv.png);
+    background-size: cover;
+    background-position-X: 20%;
+    &__title-wrap{
+        position: absolute;
+        max-width: 435px;
+        img{width: 100%;}
+        p{
+            margin-top: 40px;
+            font-size: fs(15);
+            font-weight: 500;
+        }
+    }
+}
